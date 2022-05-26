@@ -12,7 +12,7 @@ class CardMonthSpend: UIView {
     fileprivate let stackBase: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 8
+        stack.spacing = 0
         stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -29,9 +29,10 @@ class CardMonthSpend: UIView {
     
     fileprivate let labelTitle: UILabel = {
         let label = UILabel()
-        label.text = "This month spend"
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.text = "Total current balance"
+        label.font = .systemFont(ofSize: 13, weight: .bold)
         label.textColor = UIColor(named: "Disabled")
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,8 +40,9 @@ class CardMonthSpend: UIView {
     fileprivate let labelValue: UILabel = {
         let label = UILabel()
         label.text = "$340.00"
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textColor = UIColor(named: "Text")
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,8 +60,8 @@ class CardMonthSpend: UIView {
 
     // MARK: - Setup
     fileprivate func setupVC() {
-        self.backgroundColor = UIColor(named: "Card")
-        self.layer.cornerRadius = 8
+//        self.backgroundColor = UIColor(named: "Card")
+//        self.layer.cornerRadius = 8
         
         buildHierarchy()
         buildConstraints()
@@ -77,7 +79,7 @@ class CardMonthSpend: UIView {
     
     fileprivate func buildConstraints() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 68),
+            self.heightAnchor.constraint(equalToConstant: 75),
             
             stackBase.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
             stackBase.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),

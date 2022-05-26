@@ -99,11 +99,31 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         return collectionView
     }()
 
+    fileprivate lazy var buttonAdd: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "Text")
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .white
+        
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVC()
+    }
+    
+    // MARK: - Action
+    @IBAction func addButtonTapped() -> Void {
+        let modalVC = AddExpenseViewController()
+        modalVC.modalPresentationStyle = .fullScreen
+        self.present(modalVC, animated: true, completion: nil)
     }
     
     // MARK: - Setup
@@ -136,6 +156,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         stackTransactions.addArrangedSubview(labelTransactions)
         stackTransactions.addArrangedSubview(collectionViewTransaction)
         
+        view.addSubview(buttonAdd)
+        
 //        stackBase.addArrangedSubview(viewStackAux)
     }
     
@@ -145,6 +167,11 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             stackBase.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stackBase.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             stackBase.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            buttonAdd.heightAnchor.constraint(equalToConstant: 50),
+            buttonAdd.widthAnchor.constraint(equalToConstant: 50),
+            buttonAdd.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
+            buttonAdd.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
         ])
     }
 }

@@ -23,6 +23,13 @@
 		E011666D283D208F00A6A426 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E011666C283D208F00A6A426 /* RxRelay */; };
 		E011666F283D208F00A6A426 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E011666E283D208F00A6A426 /* RxSwift */; };
 		E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */; };
+		E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */; };
+		E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA1283FABA800D1DF78 /* BoxDate.swift */; };
+		E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */; };
+		E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */; };
+		E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */; };
+		E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50C283E91A000F20C04 /* BoxCategory.swift */; };
+		E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +48,13 @@
 		E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMonthSpend.swift; sourceTree = "<group>"; };
 		E0116667283D18FB00A6A426 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		E07CFDA1283FABA800D1DF78 /* BoxDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDate.swift; sourceTree = "<group>"; };
+		E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxExpense.swift; sourceTree = "<group>"; };
+		E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		E0C5D50C283E91A000F20C04 /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
+		E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSegmented.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +107,7 @@
 		E0116655283D04C800A6A426 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E0116675283D4AB800A6A426 /* AddExpenseViewController */,
 				E011665C283D053C00A6A426 /* Navigation */,
 				E0116658283D04E600A6A426 /* Home */,
 			);
@@ -105,6 +120,7 @@
 				E011665F283D084700A6A426 /* CardExpense.swift */,
 				E0116661283D08FA00A6A426 /* AuxViewController.swift */,
 				E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */,
+				E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -156,6 +172,43 @@
 				E0116667283D18FB00A6A426 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0116675283D4AB800A6A426 /* AddExpenseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E07CFDA5283FC75700D1DF78 /* ViewModel */,
+				E0116676283D4AC800A6A426 /* View */,
+			);
+			path = AddExpenseViewController;
+			sourceTree = "<group>";
+		};
+		E0116676283D4AC800A6A426 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5D50B283E918600F20C04 /* Common */,
+				E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E07CFDA5283FC75700D1DF78 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0C5D50B283E918600F20C04 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5D50C283E91A000F20C04 /* BoxCategory.swift */,
+				E07CFDA1283FABA800D1DF78 /* BoxDate.swift */,
+				E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */,
+				E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,16 +290,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */,
+				E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */,
 				E0116641283D03FB00A6A426 /* ViewController.swift in Sources */,
+				E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */,
 				E0116668283D18FB00A6A426 /* HomeViewModel.swift in Sources */,
 				E0116664283D0F9E00A6A426 /* CardMonthSpend.swift in Sources */,
 				E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */,
 				E011663D283D03FB00A6A426 /* AppDelegate.swift in Sources */,
+				E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */,
+				E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */,
 				E0116660283D084800A6A426 /* CardExpense.swift in Sources */,
 				E011665E283D056100A6A426 /* NavigationController.swift in Sources */,
 				E011663F283D03FB00A6A426 /* SceneDelegate.swift in Sources */,
+				E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */,
 				E011665B283D052400A6A426 /* HomeViewController.swift in Sources */,
 				E0116662283D08FA00A6A426 /* AuxViewController.swift in Sources */,
+				E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
