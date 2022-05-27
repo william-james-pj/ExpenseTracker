@@ -42,10 +42,17 @@ class TransactionCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    fileprivate let labelEmoji: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     fileprivate let stackHeaderText: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 6
+        stack.spacing = 0
         stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -53,21 +60,25 @@ class TransactionCollectionViewCell: UICollectionViewCell {
     
     fileprivate let labelTitle: UILabel = {
         let label = UILabel()
-        label.text = "Fuel"
         label.font = .systemFont(ofSize: 14, weight: .bold)
         label.textColor = UIColor(named: "Text")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    fileprivate let labelCategory: UILabel = {
-        let label = UILabel()
-        label.text = "Car"
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = UIColor(named: "Disabled")
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    fileprivate let viewHeaderTextAux: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
+    
+//    fileprivate let labelCategory: UILabel = {
+//        let label = UILabel()
+//        label.font = .systemFont(ofSize: 12, weight: .regular)
+//        label.textColor = UIColor(named: "Disabled")
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
     
     fileprivate let stackFooter: UIStackView = {
         let stack = UIStackView()
@@ -80,7 +91,6 @@ class TransactionCollectionViewCell: UICollectionViewCell {
     
     fileprivate let labelValue: UILabel = {
         let label = UILabel()
-        label.text = "$10.00"
         label.font = .systemFont(ofSize: 14, weight: .bold)
         label.textAlignment = .right
         label.textColor = UIColor(named: "Text")
@@ -90,7 +100,6 @@ class TransactionCollectionViewCell: UICollectionViewCell {
     
     fileprivate let labelDate: UILabel = {
         let label = UILabel()
-        label.text = "05/20/2022"
         label.font = .systemFont(ofSize: 10, weight: .regular)
         label.textAlignment = .right
         label.textColor = UIColor(named: "Disabled")
@@ -118,7 +127,39 @@ class TransactionCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
-    func settingCell() {
+    func settingCell(_ item: ExpenseModel) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        self.labelValue.text = item.expenseType == .expense ? "$-\(item.value)" : "$\(item.value)"
+        self.labelTitle.text = item.category.rawValue
+        self.labelDate.text = dateFormatter.string(from: item.date)
+        
+        setEmoji(to: item.category)
+    }
+    
+    fileprivate func setEmoji(to category: CategoryType) {
+        switch category {
+        case .housing:
+            self.labelEmoji.text = "🏠"
+        case .transportation:
+            self.labelEmoji.text = "🚗"
+        case .food:
+            self.labelEmoji.text = "🍔"
+        case .medical:
+            self.labelEmoji.text = "💊"
+        case .personalSpending:
+            self.labelEmoji.text = "🛍"
+        case .entertainment:
+            self.labelEmoji.text = "📽"
+        case .miscellaneous:
+            self.labelEmoji.text = "💳"
+        case .salary:
+            self.labelEmoji.text = "💰"
+        case .investments:
+            self.labelEmoji.text = "💹"
+        }
     }
     
     fileprivate func buildHierarchy() {
@@ -127,9 +168,10 @@ class TransactionCollectionViewCell: UICollectionViewCell {
         stackBase.addArrangedSubview(stackHeader)
         stackHeader.addArrangedSubview(viewSquareContainer)
         viewSquareContainer.addSubview(viewSquare)
+        viewSquare.addSubview(labelEmoji)
         stackHeader.addArrangedSubview(stackHeaderText)
         stackHeaderText.addArrangedSubview(labelTitle)
-        stackHeaderText.addArrangedSubview(labelCategory)
+//        stackHeaderText.addArrangedSubview(viewHeaderTextAux)
         
         stackBase.addArrangedSubview(stackFooter)
         stackFooter.addArrangedSubview(labelValue)
@@ -149,6 +191,9 @@ class TransactionCollectionViewCell: UICollectionViewCell {
             viewSquare.heightAnchor.constraint(equalToConstant: 32),
             viewSquare.centerXAnchor.constraint(equalTo: viewSquareContainer.centerXAnchor),
             viewSquare.centerYAnchor.constraint(equalTo: viewSquareContainer.centerYAnchor),
+        
+            labelEmoji.centerXAnchor.constraint(equalTo: viewSquare.centerXAnchor),
+            labelEmoji.centerYAnchor.constraint(equalTo: viewSquare.centerYAnchor),
         ])
     }
 }

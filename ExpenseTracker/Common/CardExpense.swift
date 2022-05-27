@@ -65,7 +65,7 @@ class CardExpense: UIView {
     
     fileprivate let labelValue: UILabel = {
         let label = UILabel()
-        label.text = "$10.00"
+        label.text = "$0.00"
         label.font = .systemFont(ofSize: 14, weight: .bold)
         label.textColor = UIColor(named: "Text")
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,9 @@ class CardExpense: UIView {
     }
     
     // MARK: - Methods
-    func confiView(to type: CardExpenseType) {
+    func confiView(to type: CardExpenseType, value: String) {
+        self.labelValue.text = value
+        
         switch type {
         case .expense:
             self.labelTitle.text = "Expense"

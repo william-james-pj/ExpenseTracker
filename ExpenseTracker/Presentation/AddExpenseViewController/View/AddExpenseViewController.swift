@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddExpenseViewController: UIViewController {
+    // MARK: - Constrants
+    fileprivate let disposeBag = DisposeBag()
     
     // MARK: - Variables
-    fileprivate var viewModel: AddExpenseViewModel = {
+    var viewModel: AddExpenseViewModel = {
         return AddExpenseViewModel()
     }()
+    fileprivate var selectedCategory: CategoryType?
+    fileprivate var selectedExpenseType: ExpenseType?
     
     // MARK: - Components
     fileprivate let stackBase: UIStackView = {
@@ -147,6 +152,20 @@ class AddExpenseViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped() -> Void {
+        guard let selectedCategory = selectedCategory, let selectedExpenseType = selectedExpenseType, let valueTxt = self.textFieldValue.text else {
+            return
+        }
+        
+        guard let value = Double(valueTxt) else {
+            return
+        }
+        
+        let selectedDate = self.boxDate.datePicker.date
+        
+        let newExpense = ExpenseModel(id: "\(UUID())", category: selectedCategory, expenseType: selectedExpenseType, date: selectedDate, value: value)
+        
+        self.viewModel.addNewExpense(by: newExpense)
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -154,7 +173,13 @@ class AddExpenseViewController: UIViewController {
     fileprivate func setupVC() {
         view.backgroundColor = UIColor(named: "Backgroud")
         
-        self.boxCategory.setActionButton(to: self.viewModel.getTitleActions())
+        self.boxCategory.categorySubjectObservable.subscribe(onNext: { category in
+            self.selectedCategory = category
+        }).disposed(by: disposeBag)
+        
+        self.boxExpense.expenseSubjectObservable.subscribe(onNext: { expenseType in
+            self.selectedExpenseType = expenseType
+        }).disposed(by: disposeBag)
         
         buildHierarchy()
         buildConstraints()

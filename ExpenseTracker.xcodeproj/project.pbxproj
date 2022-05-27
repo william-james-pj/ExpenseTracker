@@ -27,6 +27,7 @@
 		E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA1283FABA800D1DF78 /* BoxDate.swift */; };
 		E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */; };
 		E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */; };
+		E07CFDA9283FE3D000D1DF78 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */; };
 		E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */; };
 		E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50C283E91A000F20C04 /* BoxCategory.swift */; };
 		E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */; };
@@ -52,6 +53,7 @@
 		E07CFDA1283FABA800D1DF78 /* BoxDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDate.swift; sourceTree = "<group>"; };
 		E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxExpense.swift; sourceTree = "<group>"; };
 		E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
 		E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		E0C5D50C283E91A000F20C04 /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
 		E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSegmented.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		E0116657283D04DC00A6A426 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */,
 				E0116660283D084800A6A426 /* CardExpense.swift in Sources */,
 				E011665E283D056100A6A426 /* NavigationController.swift in Sources */,
+				E07CFDA9283FE3D000D1DF78 /* ExpenseModel.swift in Sources */,
 				E011663F283D03FB00A6A426 /* SceneDelegate.swift in Sources */,
 				E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */,
 				E011665B283D052400A6A426 /* HomeViewController.swift in Sources */,

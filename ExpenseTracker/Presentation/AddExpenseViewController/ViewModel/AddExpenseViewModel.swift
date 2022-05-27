@@ -6,18 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
 class AddExpenseViewModel {
+    // MARK: - Constants
+    fileprivate let expenseSubject = PublishSubject<ExpenseModel>()
     
-    func getTitleActions() -> [String] {
-        return [
-            "Housing",
-            "Transportation",
-            "Food",
-            "Medical",
-            "Personal Spending",
-            "Entertainment",
-            "Miscellaneous",
-        ]
+    // MARK: - Variables
+    var taskSubjectObservable: Observable<ExpenseModel> {
+        return expenseSubject.asObserver()
+    }
+    
+    func addNewExpense(by newExpense: ExpenseModel) {
+        expenseSubject.onNext(newExpense)
     }
 }

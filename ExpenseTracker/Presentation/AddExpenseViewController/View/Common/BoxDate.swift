@@ -39,7 +39,7 @@ class BoxDate: UIView {
         return image
     }()
     
-    fileprivate let datePicker: UIDatePicker = {
+    let datePicker: UIDatePicker = {
         let date = UIDatePicker()
         date.datePickerMode = .date
         date.locale = Locale(identifier: "en_US")

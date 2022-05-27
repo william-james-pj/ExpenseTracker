@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 
-class HomeViewController: UIViewController, UITableViewDelegate {
+class HomeViewController: UIViewController {
     // MARK: - Constrants
     fileprivate let resuseIdentifierTransaction = "TransactionCollectionViewCell"
+    fileprivate let disposeBag = DisposeBag()
     
     // MARK: - Variables
     fileprivate var viewModel: HomeViewModel = {
         return HomeViewModel()
     }()
+    fileprivate var allExpenses: [ExpenseModel] = []
     
     // MARK: - Components
     fileprivate let stackBase: UIStackView = {
@@ -58,14 +61,12 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     fileprivate let viewCardIncome: CardExpense = {
         let view = CardExpense()
-        view.confiView(to: .income)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     fileprivate let viewCardExpense: CardExpense = {
         let view = CardExpense()
-        view.confiView(to: .expense)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -123,12 +124,24 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     @IBAction func addButtonTapped() -> Void {
         let modalVC = AddExpenseViewController()
         modalVC.modalPresentationStyle = .fullScreen
+        
+        modalVC.viewModel.taskSubjectObservable.subscribe(onNext: { expense in
+            self.viewModel.newTask(expense)
+        }).disposed(by: disposeBag)
+        
         self.present(modalVC, animated: true, completion: nil)
     }
     
     // MARK: - Setup
     fileprivate func setupVC() {
         view.backgroundColor = UIColor(named: "Backgroud")
+        
+        viewModel.spendBehavior.subscribe(onNext: { expenses in
+            print("Subscribe Home")
+            self.allExpenses = expenses
+            self.collectionViewTransaction.reloadData()
+            self.settingValues()
+        }).disposed(by: disposeBag)
         
         buildHierarchy()
         buildConstraints()
@@ -143,6 +156,21 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     }
     
     // MARK: - Methods
+    fileprivate func settingValues() {
+        let expenses = allExpenses.filter { $0.expenseType == .expense }
+        let incomes = allExpenses.filter { $0.expenseType == .income }
+        
+        let expenseValues = expenses.map { $0.value }
+        let incomeValues = incomes.map { $0.value }
+        
+        let expenseTotal = expenseValues.reduce(0) { $0 + $1 }
+        let incomeTotal = incomeValues.reduce(0) { $0 + $1 }
+        
+        self.viewCardExpense.confiView(to: .expense, value: "$\(expenseTotal)")
+        self.viewCardIncome.confiView(to: .income, value: "$\(incomeTotal)")
+        self.viewCardMonth.confiView(value: "$\(incomeTotal - expenseTotal)")
+    }
+    
     fileprivate func buildHierarchy() {
         view.addSubview(stackBase)
         
@@ -186,11 +214,12 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - extension CollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return allExpenses.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resuseIdentifierTransaction, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resuseIdentifierTransaction, for: indexPath) as! TransactionCollectionViewCell
+        cell.settingCell(allExpenses[indexPath.row])
         return cell
     }
 }

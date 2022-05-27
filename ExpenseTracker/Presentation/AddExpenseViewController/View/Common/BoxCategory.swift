@@ -5,8 +5,17 @@
 //  Created by Pinto Junior, William James on 25/05/22.
 //
 import UIKit
+import RxSwift
 
 class BoxCategory: UIView {
+    // MARK: - Constants
+    fileprivate let categorySubject = PublishSubject<CategoryType>()
+    
+    // MARK: - Variables
+    var categorySubjectObservable: Observable<CategoryType> {
+        return categorySubject.asObserver()
+    }
+    
     // MARK: - Components
     fileprivate let stackBase: UIStackView = {
         let stack = UIStackView()
@@ -67,15 +76,16 @@ class BoxCategory: UIView {
         
         buildHierarchy()
         buildConstraints()
+        setActionButton()
     }
     
     // MARK: - Methods
-    func setActionButton(to actionTitle: [String]) {
+    func setActionButton() {
         var actions: [UIAction] = []
-        
-        for title in actionTitle {
-            let action = UIAction(title: title) { _ in
-                self.pullDownButton.setTitle(title, for: .normal)
+        for value in CategoryType.allCases {
+            let action = UIAction(title: value.rawValue) { _ in
+                self.pullDownButton.setTitle(value.rawValue, for: .normal)
+                self.categorySubject.onNext(value)
             }
             actions.append(action)
         }

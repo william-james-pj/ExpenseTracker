@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import RxSwift
 
 class CheckSegmented: UIView {
+    // MARK: - Constants
+    fileprivate let checkSubject = PublishSubject<ExpenseType>()
+    
+    // MARK: - Variables
+    var checkSubjectObservable: Observable<ExpenseType> {
+        return checkSubject.asObserver()
+    }
+    
     // MARK: - Components
     fileprivate let stackBase: UIStackView = {
         let stack = UIStackView()
@@ -129,6 +138,12 @@ class CheckSegmented: UIView {
         
 //        sender.backgroundColor = UIColor(named: "Text")
         sender.tintColor = UIColor(named: "Text")
+        
+        if sender == self.buttonCheckOp1 {
+            self.checkSubject.onNext(.income)
+            return
+        }
+        self.checkSubject.onNext(.expense)
     }
     
     // MARK: - Methods

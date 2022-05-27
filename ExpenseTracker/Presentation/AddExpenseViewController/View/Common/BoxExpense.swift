@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class BoxExpense: UIView {
+    // MARK: - Constants
+    fileprivate let expenseSubject = PublishSubject<ExpenseType>()
+    fileprivate let disposeBag = DisposeBag()
+    
+    // MARK: - Variables
+    var expenseSubjectObservable: Observable<ExpenseType> {
+        return expenseSubject.asObserver()
+    }
+    
     // MARK: - Components
     fileprivate let stackBase: UIStackView = {
         let stack = UIStackView()
@@ -60,6 +70,10 @@ class BoxExpense: UIView {
     fileprivate func setupVC() {
         self.backgroundColor = UIColor(named: "Card")
         self.layer.cornerRadius = 8
+        
+        self.checkSegmented.checkSubjectObservable.subscribe(onNext: { expenseType in
+            self.expenseSubject.onNext(expenseType)
+        }).disposed(by: disposeBag)
         
         buildHierarchy()
         buildConstraints()

@@ -39,7 +39,7 @@ class CardMonthSpend: UIView {
     
     fileprivate let labelValue: UILabel = {
         let label = UILabel()
-        label.text = "$340.00"
+        label.text = "$0.00"
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textColor = UIColor(named: "Text")
         label.textAlignment = .center
@@ -68,6 +68,9 @@ class CardMonthSpend: UIView {
     }
     
     // MARK: - Methods
+    func confiView(value: String) {
+        self.labelValue.text = value
+    }
     fileprivate func buildHierarchy() {
         self.addSubview(stackBase)
         
