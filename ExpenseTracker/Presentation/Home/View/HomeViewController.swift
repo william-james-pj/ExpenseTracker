@@ -132,6 +132,16 @@ class HomeViewController: UIViewController {
         self.present(modalVC, animated: true, completion: nil)
     }
     
+    @IBAction func navBarButtonRight() -> Void {
+        let transactionsVC = TransactionsViewController()
+        transactionsVC.modalPresentationStyle = .fullScreen
+        
+        transactionsVC.viewModel.expenseBehavior.accept(allExpenses)
+        
+        self.present(transactionsVC, animated: true, completion: nil)
+    }
+
+    
     // MARK: - Setup
     fileprivate func setupVC() {
         view.backgroundColor = UIColor(named: "Backgroud")
@@ -146,6 +156,7 @@ class HomeViewController: UIViewController {
         buildHierarchy()
         buildConstraints()
         setupCollection()
+        setupNavbar()
     }
     
     fileprivate func setupCollection() {
@@ -191,7 +202,7 @@ class HomeViewController: UIViewController {
     
     fileprivate func buildConstraints() {
         NSLayoutConstraint.activate([
-            stackBase.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            stackBase.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             stackBase.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stackBase.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             stackBase.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -201,6 +212,18 @@ class HomeViewController: UIViewController {
             buttonAdd.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
             buttonAdd.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
         ])
+    }
+    
+    fileprivate func setupNavbar() {
+        let btnTransaction = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        btnTransaction.backgroundColor = UIColor(named: "Card")
+        btnTransaction.setImage(UIImage(systemName: "diamond.inset.filled"), for: .normal)
+        btnTransaction.tintColor = UIColor(named: "Disabled")
+        btnTransaction.layer.cornerRadius = 4.0
+        btnTransaction.layer.masksToBounds = true
+        btnTransaction.addTarget(self, action: #selector(navBarButtonRight), for: .touchUpInside)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btnTransaction)
     }
 }
 

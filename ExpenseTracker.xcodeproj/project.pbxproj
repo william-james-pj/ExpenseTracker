@@ -24,6 +24,8 @@
 		E011666F283D208F00A6A426 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E011666E283D208F00A6A426 /* RxSwift */; };
 		E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */; };
 		E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */; };
+		E02C04FC2844F308000F96E4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */; };
+		E02C04FE2844F9E8000F96E4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */; };
 		E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA1283FABA800D1DF78 /* BoxDate.swift */; };
 		E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */; };
 		E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */; };
@@ -31,6 +33,7 @@
 		E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */; };
 		E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50C283E91A000F20C04 /* BoxCategory.swift */; };
 		E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */; };
+		E0D5F362284508CF00D7DDAD /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,8 @@
 		E0116667283D18FB00A6A426 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
 		E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		E07CFDA1283FABA800D1DF78 /* BoxDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDate.swift; sourceTree = "<group>"; };
 		E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxExpense.swift; sourceTree = "<group>"; };
 		E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		E0C5D50C283E91A000F20C04 /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
 		E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSegmented.swift; sourceTree = "<group>"; };
+		E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		E0116655283D04C800A6A426 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E02C04F92844F2CF000F96E4 /* Transactions */,
 				E0116675283D4AB800A6A426 /* AddExpenseViewController */,
 				E011665C283D053C00A6A426 /* Navigation */,
 				E0116658283D04E600A6A426 /* Home */,
@@ -195,6 +202,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E02C04F92844F2CF000F96E4 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F360284508B700D7DDAD /* ViewModel */,
+				E02C04FA2844F2E2000F96E4 /* View */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		E02C04FA2844F2E2000F96E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E02C04FF2844F9F6000F96E4 /* Common */,
+				E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E02C04FF2844F9F6000F96E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E07CFDA5283FC75700D1DF78 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +245,14 @@
 				E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E0D5F360284508B700D7DDAD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +337,11 @@
 				E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */,
 				E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */,
 				E0116641283D03FB00A6A426 /* ViewController.swift in Sources */,
+				E02C04FE2844F9E8000F96E4 /* CustomSegmentedControl.swift in Sources */,
 				E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */,
 				E0116668283D18FB00A6A426 /* HomeViewModel.swift in Sources */,
 				E0116664283D0F9E00A6A426 /* CardMonthSpend.swift in Sources */,
+				E02C04FC2844F308000F96E4 /* TransactionsViewController.swift in Sources */,
 				E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */,
 				E011663D283D03FB00A6A426 /* AppDelegate.swift in Sources */,
 				E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */,
@@ -310,6 +353,7 @@
 				E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */,
 				E011665B283D052400A6A426 /* HomeViewController.swift in Sources */,
 				E0116662283D08FA00A6A426 /* AuxViewController.swift in Sources */,
+				E0D5F362284508CF00D7DDAD /* TransactionsViewModel.swift in Sources */,
 				E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
