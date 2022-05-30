@@ -34,6 +34,7 @@
 		E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50C283E91A000F20C04 /* BoxCategory.swift */; };
 		E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */; };
 		E0D5F362284508CF00D7DDAD /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */; };
+		E0D5F3642845231A00D7DDAD /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		E0C5D50C283E91A000F20C04 /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
 		E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSegmented.swift; sourceTree = "<group>"; };
 		E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				E0116661283D08FA00A6A426 /* AuxViewController.swift */,
 				E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */,
 				E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */,
+				E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				E0116668283D18FB00A6A426 /* HomeViewModel.swift in Sources */,
 				E0116664283D0F9E00A6A426 /* CardMonthSpend.swift in Sources */,
 				E02C04FC2844F308000F96E4 /* TransactionsViewController.swift in Sources */,
+				E0D5F3642845231A00D7DDAD /* UserDefaults+Extensions.swift in Sources */,
 				E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */,
 				E011663D283D03FB00A6A426 /* AppDelegate.swift in Sources */,
 				E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */,
