@@ -13,6 +13,29 @@
 		E0116644283D03FB00A6A426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0116642283D03FB00A6A426 /* Main.storyboard */; };
 		E0116646283D040500A6A426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0116645283D040500A6A426 /* Assets.xcassets */; };
 		E0116649283D040500A6A426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0116647283D040500A6A426 /* LaunchScreen.storyboard */; };
+		E011665B283D052400A6A426 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011665A283D052400A6A426 /* HomeViewController.swift */; };
+		E011665E283D056100A6A426 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011665D283D056100A6A426 /* NavigationController.swift */; };
+		E0116660283D084800A6A426 /* CardExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E011665F283D084700A6A426 /* CardExpense.swift */; };
+		E0116662283D08FA00A6A426 /* AuxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116661283D08FA00A6A426 /* AuxViewController.swift */; };
+		E0116664283D0F9E00A6A426 /* CardMonthSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */; };
+		E0116668283D18FB00A6A426 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116667283D18FB00A6A426 /* HomeViewModel.swift */; };
+		E011666B283D208F00A6A426 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E011666A283D208F00A6A426 /* RxCocoa */; };
+		E011666D283D208F00A6A426 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E011666C283D208F00A6A426 /* RxRelay */; };
+		E011666F283D208F00A6A426 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E011666E283D208F00A6A426 /* RxSwift */; };
+		E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */; };
+		E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */; };
+		E02C04FC2844F308000F96E4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */; };
+		E02C04FE2844F9E8000F96E4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */; };
+		E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA1283FABA800D1DF78 /* BoxDate.swift */; };
+		E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */; };
+		E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */; };
+		E07CFDA9283FE3D000D1DF78 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */; };
+		E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */; };
+		E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50C283E91A000F20C04 /* BoxCategory.swift */; };
+		E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */; };
+		E0D5F362284508CF00D7DDAD /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */; };
+		E0D5F3642845231A00D7DDAD /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */; };
+		E0F11AF92847934E008C8D87 /* DateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F11AF82847934E008C8D87 /* DateFilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +47,26 @@
 		E0116645283D040500A6A426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0116648283D040500A6A426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E011664A283D040500A6A426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E011665A283D052400A6A426 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E011665D283D056100A6A426 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E011665F283D084700A6A426 /* CardExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpense.swift; sourceTree = "<group>"; };
+		E0116661283D08FA00A6A426 /* AuxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxViewController.swift; sourceTree = "<group>"; };
+		E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMonthSpend.swift; sourceTree = "<group>"; };
+		E0116667283D18FB00A6A426 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		E07CFDA1283FABA800D1DF78 /* BoxDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDate.swift; sourceTree = "<group>"; };
+		E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxExpense.swift; sourceTree = "<group>"; };
+		E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
+		E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		E0C5D50C283E91A000F20C04 /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
+		E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSegmented.swift; sourceTree = "<group>"; };
+		E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		E0F11AF82847934E008C8D87 /* DateFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E011666F283D208F00A6A426 /* RxSwift in Frameworks */,
+				E011666D283D208F00A6A426 /* RxRelay in Frameworks */,
+				E011666B283D208F00A6A426 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +102,9 @@
 		E011663B283D03FB00A6A426 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E0116657283D04DC00A6A426 /* Model */,
+				E0116656283D04D400A6A426 /* Common */,
+				E0116655283D04C800A6A426 /* Presentation */,
 				E011663C283D03FB00A6A426 /* AppDelegate.swift */,
 				E011663E283D03FB00A6A426 /* SceneDelegate.swift */,
 				E0116640283D03FB00A6A426 /* ViewController.swift */,
@@ -65,6 +114,167 @@
 				E011664A283D040500A6A426 /* Info.plist */,
 			);
 			path = ExpenseTracker;
+			sourceTree = "<group>";
+		};
+		E0116655283D04C800A6A426 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E0F11AF428479302008C8D87 /* DateFilter */,
+				E02C04F92844F2CF000F96E4 /* Transactions */,
+				E0116675283D4AB800A6A426 /* AddExpenseViewController */,
+				E011665C283D053C00A6A426 /* Navigation */,
+				E0116658283D04E600A6A426 /* Home */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E0116656283D04D400A6A426 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E011665F283D084700A6A426 /* CardExpense.swift */,
+				E0116661283D08FA00A6A426 /* AuxViewController.swift */,
+				E0116663283D0F9E00A6A426 /* CardMonthSpend.swift */,
+				E0C5D509283E709F00F20C04 /* TextFieldCustom.swift */,
+				E0D5F3632845231A00D7DDAD /* UserDefaults+Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E0116657283D04DC00A6A426 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E07CFDA8283FE3D000D1DF78 /* ExpenseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E0116658283D04E600A6A426 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E0116666283D18DB00A6A426 /* ViewModel */,
+				E0116659283D04EE00A6A426 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E0116659283D04EE00A6A426 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0116665283D177500A6A426 /* Cell */,
+				E011665A283D052400A6A426 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E011665C283D053C00A6A426 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E011665D283D056100A6A426 /* NavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E0116665283D177500A6A426 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0116673283D3A0400A6A426 /* TransactionCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0116666283D18DB00A6A426 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0116667283D18FB00A6A426 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0116675283D4AB800A6A426 /* AddExpenseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E07CFDA5283FC75700D1DF78 /* ViewModel */,
+				E0116676283D4AC800A6A426 /* View */,
+			);
+			path = AddExpenseViewController;
+			sourceTree = "<group>";
+		};
+		E0116676283D4AC800A6A426 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5D50B283E918600F20C04 /* Common */,
+				E0116677283D4AE800A6A426 /* AddExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E02C04F92844F2CF000F96E4 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F360284508B700D7DDAD /* ViewModel */,
+				E02C04FA2844F2E2000F96E4 /* View */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		E02C04FA2844F2E2000F96E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E02C04FF2844F9F6000F96E4 /* Common */,
+				E02C04FB2844F308000F96E4 /* TransactionsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E02C04FF2844F9F6000F96E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E02C04FD2844F9E8000F96E4 /* CustomSegmentedControl.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E07CFDA5283FC75700D1DF78 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E07CFDA6283FC76F00D1DF78 /* AddExpenseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0C5D50B283E918600F20C04 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5D50C283E91A000F20C04 /* BoxCategory.swift */,
+				E07CFDA1283FABA800D1DF78 /* BoxDate.swift */,
+				E0C5D50F283E9AD900F20C04 /* CheckSegmented.swift */,
+				E07CFDA3283FABDF00D1DF78 /* BoxExpense.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E0D5F360284508B700D7DDAD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F361284508CF00D7DDAD /* TransactionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0F11AF428479302008C8D87 /* DateFilter */ = {
+			isa = PBXGroup;
+			children = (
+				E0F11AF528479310008C8D87 /* View */,
+			);
+			path = DateFilter;
+			sourceTree = "<group>";
+		};
+		E0F11AF528479310008C8D87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0F11AF82847934E008C8D87 /* DateFilterViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +293,11 @@
 			dependencies = (
 			);
 			name = ExpenseTracker;
+			packageProductDependencies = (
+				E011666A283D208F00A6A426 /* RxCocoa */,
+				E011666C283D208F00A6A426 /* RxRelay */,
+				E011666E283D208F00A6A426 /* RxSwift */,
+			);
 			productName = ExpenseTracker;
 			productReference = E0116639283D03FB00A6A426 /* ExpenseTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +326,9 @@
 				Base,
 			);
 			mainGroup = E0116630283D03FB00A6A426;
+			packageReferences = (
+				E0116669283D208F00A6A426 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = E011663A283D03FB00A6A426 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +356,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07CFDA7283FC77000D1DF78 /* AddExpenseViewModel.swift in Sources */,
+				E0C5D50A283E709F00F20C04 /* TextFieldCustom.swift in Sources */,
 				E0116641283D03FB00A6A426 /* ViewController.swift in Sources */,
+				E02C04FE2844F9E8000F96E4 /* CustomSegmentedControl.swift in Sources */,
+				E0C5D50D283E91A000F20C04 /* BoxCategory.swift in Sources */,
+				E0116668283D18FB00A6A426 /* HomeViewModel.swift in Sources */,
+				E0116664283D0F9E00A6A426 /* CardMonthSpend.swift in Sources */,
+				E02C04FC2844F308000F96E4 /* TransactionsViewController.swift in Sources */,
+				E0D5F3642845231A00D7DDAD /* UserDefaults+Extensions.swift in Sources */,
+				E0116674283D3A0400A6A426 /* TransactionCollectionViewCell.swift in Sources */,
 				E011663D283D03FB00A6A426 /* AppDelegate.swift in Sources */,
+				E0116678283D4AE800A6A426 /* AddExpenseViewController.swift in Sources */,
+				E07CFDA2283FABA800D1DF78 /* BoxDate.swift in Sources */,
+				E0116660283D084800A6A426 /* CardExpense.swift in Sources */,
+				E0F11AF92847934E008C8D87 /* DateFilterViewController.swift in Sources */,
+				E011665E283D056100A6A426 /* NavigationController.swift in Sources */,
+				E07CFDA9283FE3D000D1DF78 /* ExpenseModel.swift in Sources */,
 				E011663F283D03FB00A6A426 /* SceneDelegate.swift in Sources */,
+				E07CFDA4283FABDF00D1DF78 /* BoxExpense.swift in Sources */,
+				E011665B283D052400A6A426 /* HomeViewController.swift in Sources */,
+				E0116662283D08FA00A6A426 /* AuxViewController.swift in Sources */,
+				E0D5F362284508CF00D7DDAD /* TransactionsViewModel.swift in Sources */,
+				E0C5D510283E9AD900F20C04 /* CheckSegmented.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +594,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0116669283D208F00A6A426 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E011666A283D208F00A6A426 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0116669283D208F00A6A426 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E011666C283D208F00A6A426 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0116669283D208F00A6A426 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		E011666E283D208F00A6A426 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0116669283D208F00A6A426 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0116631283D03FB00A6A426 /* Project object */;
 }
