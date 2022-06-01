@@ -77,6 +77,7 @@ class TransactionsViewController: UIViewController {
         button.layer.cornerRadius = 8
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(openFilterButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -85,6 +86,15 @@ class TransactionsViewController: UIViewController {
         view.setButtonTitles(buttonTitles: ["Income", "Expenses"])
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    fileprivate let stackCollection: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     fileprivate let stackText: UIStackView = {
@@ -98,7 +108,6 @@ class TransactionsViewController: UIViewController {
     
     fileprivate let labelData: UILabel = {
         let label = UILabel()
-        label.text = "All"
         label.font = .systemFont(ofSize: 14, weight: .bold)
         label.textColor = UIColor(named: "Disabled")
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -136,12 +145,19 @@ class TransactionsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func openFilterButtonTapped() -> Void {
+        let filterVC = DateFilterViewController()
+        filterVC.delegate = self
+        filterVC.modalPresentationStyle = .overCurrentContext
+        self.present(filterVC, animated: true, completion: nil)
+    }
+    
     // MARK: - Setup
     fileprivate func setupVC() {
         view.backgroundColor = UIColor(named: "Backgroud")
         
         self.viewModel.expenseBehavior.subscribe(onNext: { expenses in
-            self.filterData = expenses.filter { $0.expenseType == self.filterOpBehavior.value }
+            self.filterData = expenses.filter { $0.expenseType == self.filterOpBehavior.value && self.viewModel.dateIsBetween($0.date) }
             self.settingFilter()
         }).disposed(by: disposeBag)
         
@@ -153,15 +169,14 @@ class TransactionsViewController: UIViewController {
             self.filterOpBehavior.accept(.expense)
         }).disposed(by: disposeBag)
         
-        self.filterOpBehavior.skip(1).subscribe(onNext: { op in
-            let elements = self.viewModel.getElements()
-            self.filterData = elements.filter { $0.expenseType == op }
-            self.settingFilter()
+        self.filterOpBehavior.skip(1).subscribe(onNext: { _ in
+            self.getExpensesByFilter()
         }).disposed(by: disposeBag)
         
         buildHierarchy()
         buildConstraints()
         setupCollection()
+        settingTextDate()
     }
     
     fileprivate func setupCollection() {
@@ -174,6 +189,23 @@ class TransactionsViewController: UIViewController {
     // MARK: - Methods
     fileprivate func settingFilter() {
         self.collectionViewTransaction.reloadData()
+        
+        let totalValue = self.viewModel.getTotalValue(to: self.filterOpBehavior.value)
+        self.labelTotal.text = "\(totalValue)"
+    }
+    
+    fileprivate func getExpensesByFilter() {
+        let elements = self.viewModel.getElements()
+        self.filterData = elements.filter { $0.expenseType == self.filterOpBehavior.value && self.viewModel.dateIsBetween($0.date) }
+        self.settingFilter()
+    }
+    
+    fileprivate func settingTextDate() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        
+        self.labelData.text = "\(dateFormatter.string(from: self.viewModel.startDate)) - \(dateFormatter.string(from: self.viewModel.endDate))"
     }
     
     fileprivate func buildHierarchy() {
@@ -186,11 +218,11 @@ class TransactionsViewController: UIViewController {
         
         stackBase.addArrangedSubview(customSegmented)
         
-        stackBase.addArrangedSubview(stackText)
+        stackBase.addArrangedSubview(stackCollection)
+        stackCollection.addArrangedSubview(stackText)
         stackText.addArrangedSubview(labelData)
         stackText.addArrangedSubview(labelTotal)
-        
-        stackBase.addArrangedSubview(collectionViewTransaction)
+        stackCollection.addArrangedSubview(collectionViewTransaction)
     }
     
     fileprivate func buildConstraints() {
@@ -236,4 +268,11 @@ extension TransactionsViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 64)
     }
 }
-
+// MARK: - extension DateFilterDelegate
+extension TransactionsViewController: DateFilterDelegate {
+    func setDate(startDate: Date, endDate: Date) {
+        self.viewModel.setDate(startDate: startDate, endDate: endDate)
+        self.settingTextDate()
+        self.getExpensesByFilter()
+    }
+}
